@@ -1,0 +1,227 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registro Quinto Año -- CBIT Carlos Manuel Arrieta</title>
+<style>
+  :root {
+    --azul: #1e3a8a;
+    --azul-claro: #3b82f6;
+    --dorado: #f59e0b;
+    --gris: #f3f4f6;
+    --texto: #1f2937;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: linear-gradient(135deg, #e0e7ff 0%, #f3f4f6 100%);
+    color: var(--texto);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ---------- HEADER ---------- */
+  header {
+    background: linear-gradient(90deg, var(--azul) 0%, var(--azul-claro) 100%);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    animation: slideDown 0.6s ease;
+  }
+  header img { height: 70px; transition: transform 0.3s; object-fit: contain; }
+  header img:hover { transform: scale(1.08) rotate(-2deg); }
+  .titulo { text-align: center; color: white; flex: 1; padding: 0 15px; }
+  .titulo h1 { font-size: 1.4rem; font-weight: 700; letter-spacing: 0.5px; }
+  .titulo p { font-size: 0.85rem; opacity: 0.9; margin-top: 3px; }
+
+  @keyframes slideDown { from { transform: translateY(-100%); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+  /* ---------- CONTENEDOR ---------- */
+  main { flex: 1; max-width: 1100px; margin: 30px auto; padding: 0 20px; width: 100%; animation: fadeIn 0.8s ease; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+  .card { background: white; border-radius: 16px; padding: 30px; box-shadow: 0 10px 30px rgba(30, 58, 138, 0.1); margin-bottom: 30px; transition: transform 0.3s; }
+  .card:hover { transform: translateY(-3px); }
+
+  h2 { color: var(--azul); margin-bottom: 20px; font-size: 1.3rem; display: flex; align-items: center; gap: 10px; }
+  h2::before { content: ''; display: inline-block; width: 5px; height: 24px; background: var(--dorado); border-radius: 3px; }
+
+  /* ---------- FORMULARIO ---------- */
+  form { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  .campo { display: flex; flex-direction: column; }
+  .campo label { font-size: 0.85rem; font-weight: 600; color: var(--azul); margin-bottom: 6px; }
+  .campo input { padding: 11px 14px; border: 2px solid #e5e7eb; border-radius: 10px; font-size: 0.95rem; transition: all 0.25s; outline: none; font-family: inherit; }
+  .campo input:focus { border-color: var(--azul-claro); box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15); transform: scale(1.02); }
+  .btn-guardar { grid-column: span 2; padding: 14px; background: linear-gradient(90deg, var(--azul) 0%, var(--azul-claro) 100%); color: white; border: none; border-radius: 10px; font-size: 1rem; font-weight: 700; cursor: pointer; letter-spacing: 0.5px; transition: all 0.3s; box-shadow: 0 4px 14px rgba(30, 58, 138, 0.3); }
+  .btn-guardar:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 8px 22px rgba(30, 58, 138, 0.4); }
+  .btn-guardar:active { transform: scale(0.98); }
+  .btn-guardar:disabled { background: #9ca3af; cursor: not-allowed; transform: none; box-shadow: none; }
+
+  /* ---------- ALERTAS ---------- */
+  .alert { padding: 12px 18px; border-radius: 10px; margin-bottom: 20px; font-weight: 600; animation: popIn 0.4s ease; display: none; }
+  .alert.success { background: #d1fae5; color: #065f46; border-left: 4px solid #10b981; display: block; }
+  .alert.error { background: #fee2e2; color: #991b1b; border-left: 4px solid #ef4444; display: block; }
+  @keyframes popIn { 0% { transform: scale(0.9); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+
+  /* ---------- FOOTER ---------- */
+  footer { background: linear-gradient(90deg, #0f172a 0%, var(--azul) 100%); color: #cbd5e1; text-align: center; padding: 22px 20px; font-size: 0.85rem; line-height: 1.7; margin-top: auto; }
+  footer strong { color: white; }
+  footer .fb { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; background: #1877f2; color: white; border-radius: 50%; margin: 8px 0; text-decoration: none; transition: transform 0.3s, box-shadow 0.3s; }
+  footer .fb:hover { transform: scale(1.15) rotate(8deg); box-shadow: 0 0 18px rgba(24, 119, 242, 0.8); }
+  footer .fb svg { width: 18px; height: 18px; fill: white; }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 700px) {
+    form { grid-template-columns: 1fr; }
+    .btn-guardar { grid-column: span 1; }
+    header { flex-direction: column; gap: 10px; padding: 15px; }
+    header img { height: 55px; }
+    .titulo h1 { font-size: 1.1rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER con DOS LOGOS ================= -->
+<header>
+  <!-- Asegúrate de tener tus imágenes con estos nombres en la carpeta img -->
+  <img src="img/logo_izquierda.png" alt="Logo izquierda">
+  <div class="titulo">
+    <h1>Registro de Estudiantes -- Quinto Año</h1>
+    <p>CBIT Carlos Manuel Arrieta · Respaldo Institucional</p>
+  </div>
+  <img src="img/logo_derecha.png" alt="Logo derecha">
+</header>
+
+<!-- ================= CONTENIDO ================= -->
+<main>
+  <!-- Mensajes de éxito o error -->
+  <div id="mensaje" class="alert"></div>
+
+  <!-- Formulario -->
+  <div class="card">
+    <h2>➕ Nuevo Registro</h2>
+    <form id="registroForm">
+      <div class="campo">
+        <label>Nombres</label>
+        <input type="text" name="nombres" required placeholder="Ej: María José">
+      </div>
+      <div class="campo">
+        <label>Apellidos</label>
+        <input type="text" name="apellidos" required placeholder="Ej: Pérez Gómez">
+      </div>
+      <div class="campo">
+        <label>Cédula</label>
+        <input type="text" name="cedula" required placeholder="Ej: 12345678">
+      </div>
+      <div class="campo">
+        <label>Correo electrónico</label>
+        <input type="email" name="correo" required placeholder="ejemplo@correo.com">
+      </div>
+      <!-- NOTA: Por seguridad en Firebase, se recomienda no guardar contraseñas en texto plano. 
+           Puedes dejar el campo o quitarlo. Aquí lo guardaremos como referencia. -->
+      <div class="campo">
+        <label>Clave del correo</label>
+        <input type="password" name="clave" required placeholder="••••••••">
+      </div>
+      <div class="campo">
+        <label>Teléfono</label>
+        <input type="text" name="telefono" placeholder="Ej: 0412-1234567">
+      </div>
+      <div class="campo">
+        <label>Sección</label>
+        <input type="text" name="seccion" placeholder="Ej: 5to A">
+      </div>
+      <button type="submit" class="btn-guardar" id="btnGuardar">💾 Guardar Registro</button>
+    </form>
+  </div>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div>© <span id="year"></span> <strong>Centro Bolivariano de Informática y Telemática Carlos Manuel Arrieta</strong></div>
+  <div>Todos los derechos reservados</div>
+  <a href="https://www.facebook.com/" target="_blank" class="fb" title="Facebook">
+    <svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg>
+  </a>
+  <div>Creador: <strong>Tutor Formador CBIT Luis Mécia</strong></div>
+</footer>
+
+<!-- ================= LÓGICA DE FIREBASE ================= -->
+<script type="module">
+  // 1. Importar las funciones de Firebase
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+  import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+  // 2. Tu configuración de Firebase (¡Tus datos exactos!)
+  const firebaseConfig = {
+    apiKey: "AIzaSyDcLGRLchpwRNMH62ffUlc9f7Ce1vkQf0o",
+    authDomain: "registrocbit.firebaseapp.com",
+    projectId: "registrocbit",
+    storageBucket: "registrocbit.firebasestorage.app",
+    messagingSenderId: "937921009762",
+    appId: "1:937921009762:web:6349a07cd544138820193b"
+  };
+
+  // 3. Inicializar Firebase
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  // 4. Lógica del formulario
+  const form = document.getElementById('registroForm');
+  const btnGuardar = document.getElementById('btnGuardar');
+  const mensajeDiv = document.getElementById('mensaje');
+
+  // Poner el año actual en el footer automáticamente
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault(); // Evita que la página se recargue
+
+    // Cambiar el botón para que el usuario sepa que está cargando
+    btnGuardar.disabled = true;
+    btnGuardar.textContent = "⏳ Guardando...";
+    mensajeDiv.className = 'alert'; // Ocultar mensajes previos
+    mensajeDiv.style.display = 'none';
+
+    // Obtener los datos del formulario
+    const formData = new FormData(form);
+    const datosEstudiante = {
+      nombres: formData.get('nombres'),
+      apellidos: formData.get('apellidos'),
+      cedula: formData.get('cedula'),
+      correo: formData.get('correo'),
+      clave: formData.get('clave'), // Se guarda en Firebase
+      telefono: formData.get('telefono'),
+      seccion: formData.get('seccion'),
+      fechaRegistro: serverTimestamp() // Guarda la fecha y hora exacta
+    };
+
+    try {
+      // Enviar los datos a la colección "estudiantes" en Firestore
+      await addDoc(collection(db, "estudiantes"), datosEstudiante);
+      
+      // Mostrar mensaje de éxito
+      mensajeDiv.textContent = "✅ ¡Estudiante registrado exitosamente!";
+      mensajeDiv.className = 'alert success';
+      
+      form.reset(); // Limpiar el formulario
+    } catch (error) {
+      // Mostrar mensaje de error
+      console.error("Error al guardar:", error);
+      mensajeDiv.textContent = "❌ Hubo un error al guardar. Revisa tu conexión.";
+      mensajeDiv.className = 'alert error';
+    } finally {
+      // Restaurar el botón
+      btnGuardar.disabled = false;
+      btnGuardar.textContent = "💾 Guardar Registro";
+    }
+  });
+</script>
+
+</body>
+</html>
